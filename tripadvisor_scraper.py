@@ -4,15 +4,16 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-import tqdm
+from tqdm import tqdm
 import json
 import time
 import re
 
-reviews_dic = {}
+reviews_dic_sk = {}
 rate_reg = re.compile('ui_bubble_rating bubble_(\d\d)')
 auth_reg = re.compile(',.*')
 
+review_num = []
 auth_list = []
 num_reviews_list = []
 rating_list = []
@@ -21,11 +22,7 @@ review_body = []
 date_review = []
 link_list = []
 
-url = {
-    'South Kensington': 'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d3784979-Reviews'
-                        '-Macellaio_RC_South_Kensington-London_England.html '
-}
-
+counter = 1
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
@@ -33,6 +30,9 @@ chrome_options.add_argument('--disable-gpu')
 
 try:
     # Select driver, get url, select window and define waiting time for web browser to load
+
+    url = {f'South Kensington': f'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d3784979'
+                                f'-Reviews-Macellaio_RC_South_Kensington-London_England.html'}
 
     driver = webdriver.Chrome('/Users/lele/Dropbox/PycharmProjects/rc_reports v2/chromedriver', options=chrome_options)
     driver.get(url.get('South Kensington'))
@@ -47,17 +47,20 @@ try:
 
     page_source = driver.page_source
 
-    strainer = SoupStrainer(class_='rev_wrap ui_columns is-multiline')
-    reviews_soup = BeautifulSoup(page_source, features='html.parser', parse_only=strainer)
+    strainer = (SoupStrainer(class_='rev_wrap ui_columns is-multiline'))
+    reviews_soup = tqdm(BeautifulSoup(page_source, features='html.parser', parse_only=strainer), desc='Getting Auhors')
 
     for review in reviews_soup:
         author = review.find(class_='info_text pointer_cursor')
         num_reviews = review.find(class_='reviewerBadge badge')
+        review_num.append(str(counter))
         auth_list.append(author.text)
         num_reviews_list.append(num_reviews.text)
+        counter += 1
 
     time.sleep(3)
     more_button = driver.find_element_by_xpath(f"//*[text()= 'More']")
+
     if more_button.is_displayed():
         driver.execute_script("arguments[0].click();", more_button)
     time.sleep(3)
@@ -65,7 +68,7 @@ try:
     page_source = driver.page_source
 
     strainer = SoupStrainer(class_='rev_wrap ui_columns is-multiline')
-    reviews_soup = BeautifulSoup(page_source, features='html.parser', parse_only=strainer)
+    reviews_soup = tqdm(BeautifulSoup(page_source, features='html.parser', parse_only=strainer), desc='Getting Reviews')
 
     for review in reviews_soup:
         rate = review.find(class_=rate_reg)
@@ -82,13 +85,16 @@ try:
 
 
     for i in range(len(auth_list)):
-        reviews_dic[f'{auth_list[i]} ({num_reviews_list[i]})'] = [f'{rating_list[i]} stars', \
-                                                    date_review[i], \
-                                                    f'Title: {review_title[i]}', \
-                                                    f'Review: {review_body[i]}', \
-                                                    f'Link": {link_list[i]}']
+        reviews_dic_sk[f'{review_num[i]}'] = [
+            f'{auth_list[i]}',
+            f'({num_reviews_list[i]})',
+            f'{rating_list[i]} stars',
+            date_review[i],
+            f'Title: {review_title[i]}',
+            f'Review: {review_body[i]}',
+            f'{link_list[i]}'
+        ]
 
-        print(reviews_dic.keys())
         print(auth_list[i] + ' / ', num_reviews_list[i], ' / Rating: ' + rating_list[i] + ' / ', date_review[i] + '\n', review_title[i] + ': ', review_body[i])
         print(link_list[i])
         print('..........................')
@@ -97,5 +103,6 @@ try:
 finally:
     driver.quit()
 
-with open('reviews.json', 'w') as fp:
-    json.dump(reviews_dic, fp, indent= 4)
+with open('reviews_sk.json', 'w') as fp:
+    json.dump(reviews_dic_sk, fp, indent= 4)
+    fp.close()
