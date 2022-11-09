@@ -4,7 +4,8 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
+import tqdm
+import json
 import time
 import re
 
@@ -15,11 +16,16 @@ auth_reg = re.compile(',.*')
 auth_list = []
 num_reviews_list = []
 rating_list = []
+review_title = []
+review_body = []
+date_review = []
+link_list = []
 
 url = {
     'South Kensington': 'https://www.tripadvisor.co.uk/Restaurant_Review-g186338-d3784979-Reviews'
                         '-Macellaio_RC_South_Kensington-London_England.html '
 }
+
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument('--headless')
@@ -65,15 +71,31 @@ try:
         rate = review.find(class_=rate_reg)
         rating = re.findall(re.compile('[1-9]'), str(rate))
         rating_list.append(rating[0])
+        title = review.find(class_="noQuotes")
+        review_title.append(title.text)
+        body = review.find(class_="partial_entry")
+        review_body.append(body.text)
+        date = review.find(class_="ratingDate")
+        date_review.append(date.text)
+        link = review.find('a', href=True)
+        link_list.append(f"https://www.tripadvisor.co.uk{link.get('href')}")
+
 
     for i in range(len(auth_list)):
-        print(auth_list[i] + ' / ', num_reviews_list[i], ' / Rating: ' + rating_list[i])
+        reviews_dic[f'{auth_list[i]} ({num_reviews_list[i]})'] = [f'{rating_list[i]} stars', \
+                                                    date_review[i], \
+                                                    f'Title: {review_title[i]}', \
+                                                    f'Review: {review_body[i]}', \
+                                                    f'Link": {link_list[i]}']
+
+        print(reviews_dic.keys())
+        print(auth_list[i] + ' / ', num_reviews_list[i], ' / Rating: ' + rating_list[i] + ' / ', date_review[i] + '\n', review_title[i] + ': ', review_body[i])
+        print(link_list[i])
         print('..........................')
-
-
 
 
 finally:
     driver.quit()
 
-
+with open('reviews.json', 'w') as fp:
+    json.dump(reviews_dic, fp, indent= 4)
