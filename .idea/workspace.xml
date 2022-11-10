@@ -20,8 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a0de3d71-9cec-439f-a968-7941ee16e882" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_exmouth.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_fitzrovia.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_northcote.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_soho.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_south_ken.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_union.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/tripadvisor_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/tripadvisor_scraper.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

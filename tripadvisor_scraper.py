@@ -10,7 +10,6 @@ import time
 import re
 
 print('')
-reviews_dic_sk = {}
 rate_reg = re.compile('ui_bubble_rating bubble_(\d\d)')
 auth_reg = re.compile(',.*')
 
@@ -41,6 +40,7 @@ try:
     urls = list(url_dic.keys())
 
     for url in urls:
+        reviews_dic = {}
         print(f'\nWorking on {url} tripAdvisor reviews...\n')
         driver = webdriver.Chrome('/Users/lele/Dropbox/PycharmProjects/rc_reports v2/chromedriver', options=chrome_options)
         driver.get(url_dic.get(url))
@@ -122,7 +122,7 @@ try:
                     bar_reviews.update(0.5)
 
                 for i in range(len(auth_list)):
-                    reviews_dic_sk[f'{review_num[i]}'] = [
+                    reviews_dic[f'{review_num[i]}'] = [
                         f'{auth_list[i]}',
                         f'({num_reviews_list[i]})',
                         f'{rating_list[i]} stars',
@@ -138,7 +138,7 @@ try:
                 time.sleep(4)
 
                 with open(f'/Users/lele/Dropbox/PycharmProjects/review_feed/reviews_{url}.json', 'w') as fp:
-                    json.dump(reviews_dic_sk, fp, indent=4)
+                    json.dump(reviews_dic, fp, indent=4)
                     fp.close()
 
                 review_num = []
@@ -159,7 +159,7 @@ try:
         print("")
         print(f'\nFinished to work on {url}. \nTotal pages scraped: {pages}.'
               f' \nTotal reviews expected: {total_reviews} / scraped: {counter - 1} ')
-        counter = 0
+        counter = 1
 
 finally:
     print('')
