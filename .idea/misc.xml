@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectPlainTextFileTypeManager">
     <file url="file://$PROJECT_DIR$/reviews.json" />
+    <file url="file://$PROJECT_DIR$/reviews_sk.json" />
   </component>
   <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.8 (review_feed)" project-jdk-type="Python SDK" />
 </project>
