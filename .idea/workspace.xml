@@ -21,13 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a0de3d71-9cec-439f-a968-7941ee16e882" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews_exmouth.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews_fitzrovia.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews_northcote.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews_soho.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews_south_ken.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reviews_union.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tripadvisor_scraper.py" beforeDir="false" afterPath="$PROJECT_DIR$/tripadvisor_scraper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_exmouth.json" beforeDir="false" afterPath="$PROJECT_DIR$/reviews_exmouth.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_fitzrovia.json" beforeDir="false" afterPath="$PROJECT_DIR$/reviews_fitzrovia.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_northcote.json" beforeDir="false" afterPath="$PROJECT_DIR$/reviews_northcote.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_soho.json" beforeDir="false" afterPath="$PROJECT_DIR$/reviews_soho.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_south_ken.json" beforeDir="false" afterPath="$PROJECT_DIR$/reviews_south_ken.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reviews_union.json" beforeDir="false" afterPath="$PROJECT_DIR$/reviews_union.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,10 +55,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.word_cloud_chart">
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="review_feed" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,9 +102,53 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="word_cloud_chart" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="review_feed" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/word_cloud_chart.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="wordcloud_chart" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="review_feed" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/wordcloud_chart.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.word_cloud_chart" />
         <item itemvalue="Python.test" />
+        <item itemvalue="Python.wordcloud_chart" />
         <item itemvalue="Python.tripadvisor_scraper" />
       </list>
     </recent_temporary>
@@ -131,28 +176,29 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="132" key="#Inspections" timestamp="1668077819596">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="414" y="132" key="#Inspections/0.0.1440.900@0.0.1440.900" timestamp="1668077819596" />
-    <state width="1266" height="165" key="GridCell.Tab.0.bottom" timestamp="1668075908233">
+    <state width="1160" height="225" key="GridCell.Tab.0.bottom" timestamp="1668375459352">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1266" height="165" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1668075908233" />
-    <state width="1266" height="165" key="GridCell.Tab.0.center" timestamp="1668075908232">
+    <state width="1160" height="225" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1668375459352" />
+    <state width="1160" height="225" key="GridCell.Tab.0.center" timestamp="1668375459351">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1266" height="165" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1668075908232" />
-    <state width="1266" height="165" key="GridCell.Tab.0.left" timestamp="1668075908232">
+    <state width="1160" height="225" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1668375459351" />
+    <state width="1160" height="225" key="GridCell.Tab.0.left" timestamp="1668375459350">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1266" height="165" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1668075908232" />
-    <state width="1266" height="165" key="GridCell.Tab.0.right" timestamp="1668075908233">
+    <state width="1160" height="225" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1668375459350" />
+    <state width="1160" height="225" key="GridCell.Tab.0.right" timestamp="1668375459351">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1266" height="165" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1668075908233" />
+    <state width="1160" height="225" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1668375459351" />
     <state width="1377" height="292" key="GridCell.Tab.1.bottom" timestamp="1667499188316">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -173,9 +219,9 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="699" height="450" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1667393667476" />
-    <state x="390" y="196" key="search.everywhere.popup" timestamp="1667930874759">
+    <state x="390" y="196" key="search.everywhere.popup" timestamp="1668195222572">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="390" y="196" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1667930874759" />
+    <state x="390" y="196" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1668195222572" />
   </component>
 </project>
